@@ -10,13 +10,10 @@ class Auth extends MY_Controller {
         if($this->session->userdata('user_auth'))
         redirect('Dashboard');
     }
-
+  
     function login(){
 
         $page_vars = array();
-      
-
-
 		$this->form_validation->set_rules('username','Username','trim')
 		->set_rules('password','Password','trim');
        
@@ -36,5 +33,4 @@ class Auth extends MY_Controller {
             'tittle' => 'Login',
         ]);
     }    
-
 }

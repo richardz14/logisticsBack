@@ -17,5 +17,8 @@ class Dashboard extends MY_Controller {
            'page_tittle' => 'Dashboard'
        ]);
     }
-
+    function logout(){
+        $this->session->sess_destroy();
+        redirect('auth/login');
+    }
 }

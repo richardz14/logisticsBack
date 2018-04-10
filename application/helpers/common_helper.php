@@ -1,7 +1,4 @@
 <?php
-
-
-
 function message($type, $message){
 	if($type != '' && $message != ''){
 		$ci = get_instance();
@@ -35,4 +32,29 @@ function show_alerts($alert = array()){
         */
 		echo '<div class="alert alert-'.$alert['type'].'">'.($icon!=''?'<span class="glyphicon glyphicon-'.$icon.'"></span>':'').'<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> '.$alert['message'].'</div>';
 	}
+}
+
+function is_nav_active($uri_string = ''){
+	if($uri_string == uri_string()){
+		return 'active';
+	}else{
+		return '';
+	}
+}
+
+function jobOrderStatus($status_str = ''){
+	if($status_str = 'pending'){
+		return 'alert-warning';
+	}else if($status_str = 'in_progress'){
+		return 'alert-info';
+	}else if($status_str = 'completed'){
+		return 'alert-success';
+	}else if($status_str = 'canceled'){
+		return 'alert-danger';
+	}
+}
+
+function field_error($field = ''){
+	if(form_error($field))
+		return ' has-error';
 }

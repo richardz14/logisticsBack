@@ -10,7 +10,7 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Dashboard
+    <?= $tittle == ''?'' : $tittle ?>
       <small>Control panel</small>
     </h1>
     <!--
@@ -23,11 +23,7 @@
 
   <!-- Main content -->
   <section class="content">
-    <div class="container">
-        <div class="row">
             <?php $this->load->view($view); ?>
-        </div>
-    </div>
   </section>
   <!-- /.content -->
 </div>
